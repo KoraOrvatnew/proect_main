@@ -8,7 +8,7 @@ body {
     font-family: "Open Sans, sans serif";
 
 }
-.container {
+.header_container {
     max-width: 1200px;
     margin:0 auto;
 }
@@ -30,6 +30,24 @@ body {
     border-radius:5px;
     outline:none;
     }
+.header_BtnMainPage {
+        padding: 8px;
+        border: 2px solid #1a191f;
+        border-radius:5px;
+        outline:none;
+        background-color:#919097;
+        font-size: 16px;
+        text-decoration: none;
+        color: white;
+      }
+      .footer_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        height:60px;
+        color: white;
+      }
     .movies {
         display:flex;
         flex-wrap: wrap;
