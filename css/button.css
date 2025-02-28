@@ -1,0 +1,10 @@
+.header_BtnMainPage {
+    padding: 8px;
+    border: 2px solid #1a191f;
+    border-radius:5px;
+    outline:none;
+    background-color:#919097;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+  }
