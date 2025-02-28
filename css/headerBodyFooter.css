@@ -11,14 +11,23 @@ body {
 .header_container {
     max-width: 1200px;
     margin:0 auto;
+    background: #1a191f;
+    
 }
 .header_content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px;
-    height:60px;
+    height:40px;
+    background-color: #1a191f;  
+position: fixed;  
+top: 0;  
+z-index: 100;  
+width: 95%;  
 }
+    
+
 .header_logo {
     font-size: 32px;
     text-decoration: none;
@@ -36,8 +45,14 @@ body {
         align-items: center;
         justify-content: space-between;
         padding: 16px;
-        height:60px;
+        height:40px;
         color: white;
+        background-color: #1a191f;  
+position: fixed;  
+bottom: 0;  
+z-index: 100;  
+width: 100%;  
+}
         
-      }
+    
     

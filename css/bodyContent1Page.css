@@ -1,3 +1,7 @@
+.container {
+    display:flex;
+    margin:40px;
+}
 .movies {
     display:flex;
     flex-wrap: wrap;
