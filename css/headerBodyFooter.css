@@ -38,6 +38,7 @@ width: 95%;
     border: 2px solid #1a191f;
     border-radius:5px;
     outline:none;
+    display: flex;
     }
  
       .footer_content {

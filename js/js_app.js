@@ -55,6 +55,10 @@ function showMovies(data) {
           ">${movie.ratingKinopoisk}</div>
         `}
       </div>
+        <div>
+                <button class="btnwatchLater">Хочу посмотреть</button>
+              </div>
+      
         `;
     moviesEl.appendChild(movieEl);
   });
