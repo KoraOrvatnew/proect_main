@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/bodyContent1Page.css">
-    <link rel="stylesheet" href="./css/button.css">
+    <link rel="stylesheet" href="../css/button_header.css">
     <link rel="stylesheet" href="./css/headerBodyFooter.css">
     <link rel="stylesheet" href="./css/zaglushka.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,12 +16,19 @@
     <title>StartPage</title>
   </head>
   <body>
-    <header class="header_container"> /*разметка шапки*/
+    <header class="header_container">
       <div class="header_content">
-        <a href="index.html" class="header_logo">MediaServer</a>
-                <a href="index.html" class="header_BtnMainPage">Вернуться на главную страницу</a>
-                <a href="./html/Posmotret.html" class="header_BtnMainPage">Хочу посмотреть</a>
-                <form>
+        <a href="#" class="header_logo">MediaServer</a>
+        <button class="header_BtnMainPage">
+          <a href="../index.html">Вернуться на главную</a>
+        </button>
+        <button class="header_BtnMainPage">
+          <a href="/html/Posmotret.html">Хочу посмотреть</a>
+       </button>
+        <button class="header_BtnMainPage">
+          <a href="http://127.0.0.1:5500/html/admin.html">Вход для модератора</a>
+        </button>
+        <form>
             <input type="text" class="header_search" placeholder="Поиск">
         </form>
          

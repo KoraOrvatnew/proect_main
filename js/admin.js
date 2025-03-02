@@ -6,6 +6,7 @@ const filmGenre = document.getElementById('genre')
 const filmRating= document.getElementById('rating')
 const filmYear = document.getElementById('year')
 const filmImageLink = document.getElementById('img')
+const filmAge = document.getElementById('age')
 const filmDescription = document.getElementById('description')
 const addBtn = document.getElementById('add')
 
@@ -25,6 +26,7 @@ addBtn.onclick = (event) => {
         rating: filmRating.value,
         year: filmYear.value,
         img: filmImageLink.value,
+        age: filmAge.value,
         description: filmDescription.value     
        
        
@@ -43,8 +45,9 @@ function addFilm(film) {
         filmName.value = ''
         filmRating.value = ''
         filmGenre.value = ''
-        // filmYear.value = ''
+        filmYear.value = ''
         filmImageLink.value = ''
+        filmAge.value = ''
         filmDescription.value = ''
     })
     .catch(err =>  console.log(err))
@@ -106,6 +109,10 @@ function showUpdateContainer() {
                 const img = document.createElement('input')
                 img.type = 'text'
                 img.value = film.img
+                const age = document.createElement('input')
+                age.type = 'number'
+                age.value = film.age
+
                 const description = document.createElement('textarea')
                 description.value = film.description
                 const btn = document.createElement('button')
@@ -119,11 +126,12 @@ function showUpdateContainer() {
                         rating: rating.value,
                         year: year.value,
                         img: img.value,
+                        age: age.value,
                         description: description.value
                     }
                     updateFilm(film.id, updatedFilm)
                 }
-                form.append(name, genre, year, rating, description, img, btn) /*year, genre*/
+                form.append(name, genre, year, rating, age, description, img, btn) /*year, genre*/
                 updateContainer.appendChild(form)
             })
 

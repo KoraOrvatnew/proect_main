@@ -1,9 +1,9 @@
 .header_BtnMainPage {
     padding: 8px;
-    border: 2px solid #1a191f;
-    border-radius:5px;
+    border: 1px solid #1a191f;
+    border-radius: 15px;
     outline:none;
-    background-color:#919097;
+    background-color:#dcdbdf;
     font-size: 16px;
     text-decoration: none;
     color: white;
@@ -15,6 +15,4 @@
   display: flex;
   border: 1px;
   border-radius: 5px;
-
-  
-}
+  }

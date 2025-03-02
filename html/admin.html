@@ -4,60 +4,61 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<!-- <link rel="stylesheet" href="../styles/common.css" />
-		<link rel="stylesheet" href="../styles/header.css" /> -->
 		<link rel="stylesheet" href="../css/admin.css" />
-		<!-- <link rel="stylesheet" href="../styles/footer.css" /> -->
-	</head>
-	<header class="header_container"> 
-		<div class="header_content">
-		  <a href="index.html" class="header_logo">MediaServer</a>
-				  <a href="index.html" class="header_BtnMainPage">Вернуться на главную страницу</a>
-				  <a href="./html/Posmotret.html" class="header_BtnMainPage">Хочу посмотреть</a>
-				  <form>
-			  <input type="text" class="header_search" placeholder="Поиск">
-		  </form>
-		   
-		</div> 
-		
-  </header>
+		<link rel="stylesheet" href="../css/button_header.css" />
+		<!-- <link rel="stylesheet" href="../css/headerBodyFooter.css" /> -->
+		</head>
+		<header class="header_container">
+			<div class="header_content">
+			  <a href="#" class="header_logo">MediaServer</a>
+			  <button class="header_BtnMainPage">
+				<a href="../index.html">Вернуться на главную</a>
+			  </button>
+			  <button class="header_BtnMainPage">
+				<a href="/html/Posmotret.html">Хочу посмотреть</a>
+			 </button>
+			  <button class="header_BtnMainPage">
+				<a href="#">Вход для модератора</a>
+			  </button>
+			  <form>
+				  <input type="text" class="header_search" placeholder="Поиск">
+			  </form>
+			   
+			</div> 
+			
+			
+	  </header>
 	<body>
-		<div class="wrapper">
-			<header>
-				<div>logo</div>
-					<nav class="menu">
-						<ul>
-							<li><a href="../index.html">Home</a></li>
-							<li><a href="../about/about.html">About</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</nav>
-			</header>
-			<main>
-                <button id="add-container">Добавление</button>
-                <button id="update-container">Редактирование</button>
-                <button id="delete-container">Удаление</button>
+				<main>
+					<!-- <center>
+						<img src="../img/модератор.jpg" alt="" height="100px">
+					</center> -->
+					
+			    <button id="add-container">Добавить карточку</button>
+
+                <button id="update-container">Редактировать карточку</button>
+                <button id="delete-container">Удалить карточку</button>
                 <div class="films">
 
                     <div class="add-film">
-                        <form id="create-form" style="display: flex; flex-direction: column;width: 300px; gap: 5px;">
+                        <form id="create-form">
                             <input type="text" id="name" placeholder="Название фильма" required />
 							<input type="text" id="genre" placeholder="Жанр" required />
                             <input type="text" id="year" placeholder="Год выхода" required />
 							<input type="number" id="rating" step="any" placeholder="Рейтинг" required />
                             <input type="text" id="img" placeholder="Ссылка на картинку" required />
                             <textarea id="description" placeholder="Описание" required></textarea>
+							<input type="number" id="age" placeholder="Ограничение по возрасту" required />
                             <button id="add" type="submit">Добавить</button>
                         </form>
                     </div>
 
                     <div class="update-film">
                         <div>
-                            <h3>Редактирование пиццы</h3>
+                            <h3>Редактирование</h3>
                         </div>
                     </div>
-                    <div class="delete-film">delete</div>
+                    <div class="delete-film">Удалить фильм</div>
 
 
 
