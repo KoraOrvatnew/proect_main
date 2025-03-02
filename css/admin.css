@@ -1,11 +1,11 @@
-.add_film {
+.add-film {
     display: block;
 }
 
-.update_film { /*проверить использование*/
+.update-film {
     display: none;
 }
 
-.delete_film { /*проверить использование*/
+.delete-film {
     display: none;
 }

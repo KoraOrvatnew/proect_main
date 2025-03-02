@@ -1,76 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/bodyContent1Page.css">
-    <link rel="stylesheet" href="../css/button.css">
-    <link rel="stylesheet" href="../css/headerBodyFooter.css">
-    <!-- <link rel="stylesheet" href="./css/zaglushka.css"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <title>Admin</title>
-  </head>
-  <body>
-    <header class="header_container"> 
-      <div class="header_content">
-        <a href="../index.html" class="header_logo">MediaServer</a>
-                <a href="../index.html" class="header_BtnMainPage">Вернуться на главную страницу</a>
-                <!-- <a href="./html/Posmotret.html" class="header_BtnMainPage">Хочу посмотреть</a> -->
-                <form>
-            <input type="text" class="header_search" placeholder="Поиск">
-        </form>
-         
-      </div> 
-      <nav><button class="header_BtnMainPage"> Вернуться на главную страницу</button></nav>
-</header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<!-- <link rel="stylesheet" href="../styles/common.css" />
+		<link rel="stylesheet" href="../styles/header.css" /> -->
+		<link rel="stylesheet" href="../css/admin.css" />
+		<!-- <link rel="stylesheet" href="../styles/footer.css" /> -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<div>logo</div>
+					<nav class="menu">
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../about/about.html">About</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+			</header>
 			<main>
-                <button id="add-container">Добавить фильм</button>
-                <button id="update-container">Редактировать карточку</button>
-                <button id="delete-container">Удалить карточку</button>
-              
-                  <div class="baza">
-  
-                      <div class="add_film">
-                          <form id="create-form" style="display: flex; flex-direction: column;width: 300px; gap: 5px;">
-                              <input type="text" id="name" placeholder="Оригинальное название фильма" required />
-                              <input type="text" id="name" placeholder="Название фильма (рус)" required />
-                              <input type="text" id="name" placeholder="Жанр фильма" required />
-                              <input type="text" id="name" placeholder="Год выхода фильма" required />
-                              <input type="text" id="name" placeholder="Страна" required />
-                              <input type="number" id="name" placeholder="Рейтинг на Кинопоиск" required />
-                              <input type="number" id="name" placeholder="ID на Кинопоиск" required/>                          
-                              <input type="text" id="img" placeholder="Ссылка постер" required />
-                              <input type="description" id="name" placeholder="Описание фильма" required />
-                              <button id="add" type="submit">Добавить</button>
-                          </form>
-                      </div>
-  
-                      <!-- <div class="update-pizza">
-                          <div>
-                              <h3>Редактирование пиццы</h3>
-                          </div>
-                      </div>
-                      <div class="delete-pizza">delete</div> -->
-  
-  
-                  </div>
-        </main>
-     
-  
-               
-                     
+                <button id="add-container">Добавление</button>
+                <button id="update-container">Редактирование</button>
+                <button id="delete-container">Удаление</button>
+                <div class="films">
+
+                    <div class="add-film">
+                        <form id="create-form" style="display: flex; flex-direction: column;width: 300px; gap: 5px;">
+                            <input type="text" id="name" placeholder="Название фильма" required />
+							<!-- <input type="text" id="name_rus" placeholder="Жанр" required /> -->
+                            <!-- <input type="text" id="price" placeholder="Год выхода" required /> -->
+							<input type="number" id="rating" placeholder="Рейтинг" required />
+                            <input type="text" id="img" placeholder="Ссылка на картинку" required />
+                            <textarea id="description" placeholder="Описание" required></textarea>
+                            <button id="add" type="submit">Добавить</button>
+                        </form>
+                    </div>
+
+                    <div class="update-film">
+                        <div>
+                            <h3>Редактирование пиццы</h3>
+                        </div>
+                    </div>
+                    <div class="delete-film">delete</div>
+
+
+
+
+
+                </div>
 			</main>
-      <footer class="footer_content">
-        <p>Контактная информация: <a href="mailto:admin@mediaserver.by" target="_blank">admin@mediaserver.by</a></p>
-        <p>Владелец &copy; 2025</p>
-      </footer>
-
-    <!-- <script src="./js/js_app.js"></script> -->
-
-  </body>
+			<footer>
+				<p>&copy; by Mikhail Hasilau</p>
+			</footer>
+		</div>
+		<script src="../js/admin.js"></script>
+	</body>
 </html>

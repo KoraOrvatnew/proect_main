@@ -1,44 +1,56 @@
-const API_URL = 'https://mediaserver-291be-default-rtdb.firebaseio.com/' /*хранилка*/ */
+// const API_URL = 'https://fd-1-41a7f-default-rtdb.firebaseio.com'
+
+// const API_URL = 'https://test-fire-fe31e-default-rtdb.firebaseio.com/'
+
+const API_URL = 'https://media-new-7c859-default-rtdb.firebaseio.com/'
 
 const createForm = document.getElementById('create-form')
-const pizzaName = document.getElementById('name')
-const pizzaPrice = document.getElementById('price')
-const pizzaImageLink = document.getElementById('img')
-const pizzaDescription = document.getElementById('description')
+const filmName = document.getElementById('name')
+// const filmGenre = document.getElementById('genre')
+const filmRating= document.getElementById('rating')
+// const filmYear = document.getElementById('year')
+const filmImageLink = document.getElementById('img')
+const filmDescription = document.getElementById('description')
 const addBtn = document.getElementById('add')
 
 const addContainerBtn = document.getElementById('add-container')
 const updateContainerBtn = document.getElementById('update-container')
 const deleteContainerBtn = document.getElementById('delete-container')
 
-const addContainer = document.querySelector('.add-pizza')
-const updateContainer = document.querySelector('.update-pizza')
-const deleteContainer = document.querySelector('.delete-pizza')
+const addContainer = document.querySelector('.add-film')
+const updateContainer = document.querySelector('.update-film')
+const deleteContainer = document.querySelector('.delete-film')
 
 
 addBtn.onclick = (event) => {
     event.preventDefault()
-    const pizza = {
-        name: pizzaName.value,
-        price: pizzaPrice.value,
-        img: pizzaImageLink.value,
-        description: pizzaDescription.value
+    const film = {
+        name: filmName.value,
+        // genre: filmGenre.value,
+        rating: filmRating.value,
+        // year: filmYear.value,
+        img: filmImageLink.value,
+        description: filmDescription.value     
+       
+       
     }
-    addPizza(pizza)
+    addFilm(film)
 }
 
-function addPizza(pizza) {
-    fetch(`${API_URL}/pizzas.json`, {
+function addFilm(film) {
+    fetch(`${API_URL}/films.json`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(pizza)
+        body: JSON.stringify(film)
     }).then(() => {
-        pizzaName.value = ''
-        pizzaPrice.value = ''
-        pizzaImageLink.value = ''
-        pizzaDescription.value = ''
+        filmName.value = ''
+        filmRating.value = ''
+        // filmGenre.value = ''
+        // filmYear.value = ''
+        filmImageLink.value = ''
+        filmDescription.value = ''
     })
     .catch(err =>  console.log(err))
 }
@@ -67,45 +79,56 @@ deleteContainerBtn.onclick = () => {
 function showUpdateContainer() {
     updateContainer.innerHTML = ''
 
-    fetch(`${API_URL}/pizzas.json`)
+    fetch(`${API_URL}/films.json`)
         .then(response => response.json())
-        .then(pizzas => {
-            console.log(pizzas);
+        .then(films => {
+            console.log(films);
             
-			const arr = Object.values(pizzas).map((pizza, i) => {
+			const arr = Object.values(films).map((film, i) => {
 				return {
-					...pizza,
-					id: Object.keys(pizzas)[i],
+					...film,
+					id: Object.keys(films)[i],
 				};
 			});
-            arr.forEach(pizza => {
+            arr.forEach(film => {
 
                 const form = document.createElement('form')
                 const name = document.createElement('input')
                 name.type = 'text'
-                name.value = pizza.name
-                const price = document.createElement('input')
-                price.type = 'number'
-                price.value = pizza.price
+                name.value = film.name
+
+                // const genre = document.createElement('input')
+                // genre.type = 'text'
+                // genre.value = film.name
+
+                const rating = document.createElement('input')
+                rating.type = 'number'
+                rating.value = film.rating
+
+                // const year = document.createElement('input')
+                // year.type = 'text'
+                // year.value = film.year
                 const img = document.createElement('input')
                 img.type = 'text'
-                img.value = pizza.img
+                img.value = film.img
                 const description = document.createElement('textarea')
-                description.value = pizza.description
+                description.value = film.description
                 const btn = document.createElement('button')
                 btn.textContent = 'Update'
 
                 btn.onclick = (event) => {
                     event.preventDefault()
-                    const updatedPizza = {
+                    const updatedFilm = {
                         name: name.value,
-                        price: price.value,
+                        // genre: genre.value,
+                        rating: rating.value,
+                        // year: year.value,
                         img: img.value,
                         description: description.value
                     }
-                    updatePizza(pizza.id, updatedPizza)
+                    updateFilm(film.id, updatedFilm)
                 }
-                form.append(name, price, description, img, btn)
+                form.append(name, rating, description, img, btn) /*year, genre*/
                 updateContainer.appendChild(form)
             })
 
@@ -113,13 +136,13 @@ function showUpdateContainer() {
 
 }
 
-function updatePizza(id, pizza) {
-    fetch(`${API_URL}/pizzas/${id}.json`, {
+function updateFilm(id, film) {
+    fetch(`${API_URL}/films/${id}.json`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(pizza)
+        body: JSON.stringify(film)
     }).then(res => res.json)
     .then(() => {
         showUpdateContainer()
@@ -132,28 +155,28 @@ function updatePizza(id, pizza) {
 function showDeleteContainer() {
     deleteContainer.innerHTML = ''
 
-    fetch(`${API_URL}/pizzas.json`)
+    fetch(`${API_URL}/films.json`)
         .then(response => response.json())
-        .then(pizzas => {
-            console.log(pizzas);
+        .then(films => {
+            console.log(films);
             
-			const arr = Object.values(pizzas).map((pizza, i) => {
+			const arr = Object.values(films).map((film, i) => {
 				return {
-					...pizza,
-					id: Object.keys(pizzas)[i],
+					...film,
+					id: Object.keys(films)[i],
 				};
 			});
-            arr.forEach(pizza => {
+            arr.forEach(film => {
 
                 const form = document.createElement('form')
                 const name = document.createElement('h4')
-                name.innerText = pizza.name
+                name.innerText = film.name
                 const btn = document.createElement('button')
                 btn.textContent = 'Delete'
 
                 btn.onclick = (event) => {
                     event.preventDefault()
-                    deletePizza(pizza.id)
+                    deleteFilm(film.id)
                 }
                 form.append(name, btn)
                 deleteContainer.appendChild(form)
@@ -163,8 +186,8 @@ function showDeleteContainer() {
 
 }
 
-function deletePizza(id) {
-    fetch(`${API_URL}/pizzas/${id}.json`, {
+function deleteFilm(id) {
+    fetch(`${API_URL}/films/${id}.json`, {
         method: 'DELETE',
     }).then(() => {
         showDeleteContainer()
