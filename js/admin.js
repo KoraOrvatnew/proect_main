@@ -4,7 +4,7 @@ const createForm = document.getElementById('create-form')
 const filmName = document.getElementById('name')
 const filmGenre = document.getElementById('genre')
 const filmRating= document.getElementById('rating')
-// const filmYear = document.getElementById('year')
+const filmYear = document.getElementById('year')
 const filmImageLink = document.getElementById('img')
 const filmDescription = document.getElementById('description')
 const addBtn = document.getElementById('add')
@@ -23,7 +23,7 @@ addBtn.onclick = (event) => {
         name: filmName.value,
         genre: filmGenre.value,
         rating: filmRating.value,
-        // year: filmYear.value,
+        year: filmYear.value,
         img: filmImageLink.value,
         description: filmDescription.value     
        
@@ -100,9 +100,9 @@ function showUpdateContainer() {
                 rating.type = 'number'
                 rating.value = film.rating
 
-                // const year = document.createElement('input')
-                // year.type = 'text'
-                // year.value = film.year
+                const year = document.createElement('input')
+                year.type = 'text'
+                year.value = film.year
                 const img = document.createElement('input')
                 img.type = 'text'
                 img.value = film.img
@@ -117,13 +117,13 @@ function showUpdateContainer() {
                         name: name.value,
                         genre: genre.value,
                         rating: rating.value,
-                        // year: year.value,
+                        year: year.value,
                         img: img.value,
                         description: description.value
                     }
                     updateFilm(film.id, updatedFilm)
                 }
-                form.append(name, genre, rating, description, img, btn) /*year, genre*/
+                form.append(name, genre, year, rating, description, img, btn) /*year, genre*/
                 updateContainer.appendChild(form)
             })
 
