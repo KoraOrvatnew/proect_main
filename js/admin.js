@@ -1,12 +1,8 @@
-// const API_URL = 'https://fd-1-41a7f-default-rtdb.firebaseio.com'
-
-// const API_URL = 'https://test-fire-fe31e-default-rtdb.firebaseio.com/'
-
 const API_URL = 'https://media-new-7c859-default-rtdb.firebaseio.com/'
 
 const createForm = document.getElementById('create-form')
 const filmName = document.getElementById('name')
-// const filmGenre = document.getElementById('genre')
+const filmGenre = document.getElementById('genre')
 const filmRating= document.getElementById('rating')
 // const filmYear = document.getElementById('year')
 const filmImageLink = document.getElementById('img')
@@ -21,12 +17,11 @@ const addContainer = document.querySelector('.add-film')
 const updateContainer = document.querySelector('.update-film')
 const deleteContainer = document.querySelector('.delete-film')
 
-
 addBtn.onclick = (event) => {
     event.preventDefault()
     const film = {
         name: filmName.value,
-        // genre: filmGenre.value,
+        genre: filmGenre.value,
         rating: filmRating.value,
         // year: filmYear.value,
         img: filmImageLink.value,
@@ -47,7 +42,7 @@ function addFilm(film) {
     }).then(() => {
         filmName.value = ''
         filmRating.value = ''
-        // filmGenre.value = ''
+        filmGenre.value = ''
         // filmYear.value = ''
         filmImageLink.value = ''
         filmDescription.value = ''
@@ -97,9 +92,9 @@ function showUpdateContainer() {
                 name.type = 'text'
                 name.value = film.name
 
-                // const genre = document.createElement('input')
-                // genre.type = 'text'
-                // genre.value = film.name
+                const genre = document.createElement('input')
+                genre.type = 'text'
+                genre.value = film.genre
 
                 const rating = document.createElement('input')
                 rating.type = 'number'
@@ -120,7 +115,7 @@ function showUpdateContainer() {
                     event.preventDefault()
                     const updatedFilm = {
                         name: name.value,
-                        // genre: genre.value,
+                        genre: genre.value,
                         rating: rating.value,
                         // year: year.value,
                         img: img.value,
@@ -128,7 +123,7 @@ function showUpdateContainer() {
                     }
                     updateFilm(film.id, updatedFilm)
                 }
-                form.append(name, rating, description, img, btn) /*year, genre*/
+                form.append(name, genre, rating, description, img, btn) /*year, genre*/
                 updateContainer.appendChild(form)
             })
 

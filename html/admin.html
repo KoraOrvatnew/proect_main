@@ -9,6 +9,18 @@
 		<link rel="stylesheet" href="../css/admin.css" />
 		<!-- <link rel="stylesheet" href="../styles/footer.css" /> -->
 	</head>
+	<header class="header_container"> 
+		<div class="header_content">
+		  <a href="index.html" class="header_logo">MediaServer</a>
+				  <a href="index.html" class="header_BtnMainPage">Вернуться на главную страницу</a>
+				  <a href="./html/Posmotret.html" class="header_BtnMainPage">Хочу посмотреть</a>
+				  <form>
+			  <input type="text" class="header_search" placeholder="Поиск">
+		  </form>
+		   
+		</div> 
+		
+  </header>
 	<body>
 		<div class="wrapper">
 			<header>
@@ -31,8 +43,8 @@
                     <div class="add-film">
                         <form id="create-form" style="display: flex; flex-direction: column;width: 300px; gap: 5px;">
                             <input type="text" id="name" placeholder="Название фильма" required />
-							<!-- <input type="text" id="name_rus" placeholder="Жанр" required /> -->
-                            <!-- <input type="text" id="price" placeholder="Год выхода" required /> -->
+							<input type="text" id="genre" placeholder="Жанр" required />
+                            <!-- <input type="text" id="year" placeholder="Год выхода" required /> -->
 							<input type="number" id="rating" placeholder="Рейтинг" required />
                             <input type="text" id="img" placeholder="Ссылка на картинку" required />
                             <textarea id="description" placeholder="Описание" required></textarea>
@@ -53,9 +65,10 @@
 
                 </div>
 			</main>
-			<footer>
-				<p>&copy; by Mikhail Hasilau</p>
-			</footer>
+			<footer class="footer_content">
+				<p>Контактная информация: <a href="mailto:admin@mediaserver.by" target="_blank">admin@mediaserver.by</a></p>
+				<p>Владелец &copy; 2025</p>
+			  </footer>
 		</div>
 		<script src="../js/admin.js"></script>
 	</body>
