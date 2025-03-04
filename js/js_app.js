@@ -21,6 +21,15 @@ function getClassByRate(vote) { /*рейтинг */
     return "red";
   }
 }
+function getClassByRate(age) { /*возраст*/
+  if (age >= 7) {
+    return "green";
+  } else if (age > 5) {
+    return "orange";
+  } else {
+    return "red";
+  }
+}
 
 function showMovies(data) {
   const moviesEl = document.querySelector(".movies");
@@ -46,12 +55,21 @@ function showMovies(data) {
           </div>
           <div class="movie_title">Название: ${movie.name}</div>
           <div class="movie_category">Жанр: ${movie.genre}</div>
-          <button class="openModal" data-index="${index}">Нажми меня!</button>
+          <div class="movie_year">Год выпуска: ${movie.year}</div>
+          <button class="openModal" data-index="${index}">Подробнее</button>
           ${movie.rating &&
             `
             <div class="movie_average--${getClassByRate(movie.rating)}">
               ${movie.rating}
             </div>
+            
+          `}
+              ${movie.age &&
+            `
+            <div class="movie_age ${getClassByRate(movie.age)}">
+              ${movie.age}
+            </div>
+            
           `}
         </div>
       `;
@@ -65,6 +83,24 @@ function showMovies(data) {
 
   openModalButtons.forEach((button) => {
     button.addEventListener('click', () => {
+      // Получаем индекс фильма из атрибута data-index
+      const index = button.getAttribute('data-index');
+      
+      // Получаем данные о фильме из массива data
+      const movieData = Object.values(data)[index];
+
+      // Выводим данные в модальное окно
+      modal.querySelector('.modal-content p').textContent = `      
+                Описание: ${movieData.description}
+               
+        `;
+ 
+
+
+
+modal.querySelector('.modal-content .poster').src=movieData.img;
+
+      // Показываем модальное окно
       modal.style.display = 'block';
     });
   });
