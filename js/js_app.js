@@ -1,19 +1,16 @@
-const API_KEY = "529c790f-3578-406b-94dd-d8956b7d306b";
-const API_URL_POPULAR = "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_250_MOVIES&page=1";
-// const API_URL_POPULAR = "https://media-new-7c859-default-rtdb.firebaseio.com/"
-// const API_URL_SEARCH = "https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=";
+const API_URL_POPULAR = "https://media-new-7c859-default-rtdb.firebaseio.com/films.json"
 getMovies(API_URL_POPULAR);
 
 async function getMovies(url) {
   const resp = await fetch(url, {
     headers: {
       "Content-Type": "application/json",
-      "X-API-KEY": API_KEY,
-    },
+          },
   });
   const respData = await resp.json();
   showMovies(respData);
 }
+
 
 function getClassByRate(vote) { /*рейтинг */
   if (vote >= 7) {
@@ -30,33 +27,44 @@ function showMovies(data) {
 
   // Очищаем предыдущие фильмы
   document.querySelector(".movies").innerHTML = "";
-
-  data.items.forEach((movie) => {
+console.log(typeof(data));
+  Object.values(data).forEach((movie) => {
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
     movieEl.innerHTML = `
         <div class="movie_cover-inner">
         <img
-          src="${movie.posterUrlPreview}" /*прьевью фильмов*/
+          src="${movie.img}" /*прьевью фильмов*/
           class="movie_cover"
-          alt="${movie.nameRu}" /*название*/
+          alt="${movie.name}" /*название*/
         />
         <div class="movie_cover--darkened"></div>
       </div>
-      <div class="movie_info">
+      < class="movie_info">
       <div>
                 <button class="btnwatchLater">Хочу посмотреть</button>
               </div>
-        <div class="movie_title">Название: ${movie.nameRu}</div>
-        <div class="movie_category">Жанр: ${movie.genres.map( /*жанр*/
-          (genre) => ` ${genre.genre}`
-        )}</div>
-        ${movie.ratingKinopoisk &&
+        <div class="movie_title">Название: ${movie.name}</div>
+        <div class="movie_category">Жанр: ${movie.genre}</div>
+
+
+        <button id="openModal">Нажми меня!</button>
+
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <button class="close">close</button>
+            <p>Привет, я всплывающее окно!</p>
+          </div>
+        </div>
+       
+    
+    </div>
+        ${movie.rating &&
             `
         <div class="movie_average--${getClassByRate(
-          movie.ratingKinopoisk
+          movie.rating
         )}
-          ">${movie.ratingKinopoisk}</div>
+          ">${movie.rating}</div>
         `}
       </div>
         
@@ -65,8 +73,5 @@ function showMovies(data) {
     moviesEl.appendChild(movieEl);
   });
 }
-
-
-
 
 
