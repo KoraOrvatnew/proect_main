@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное</title>
+</head>
+<body>
+    <h1>Избранное</h1>
+    <ul id="favoritesList"></ul>
+    <h2><a href="index.html">Вернуться к товарам</a></h2>
+
+    <script>
+        // Получаем избранные фильмы из localStorage и отображаем их
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const favoritesList = document.getElementById('favoritesList');
+
+        if (favorites.length === 0) {
+            favoritesList.innerHTML = '<li>Нет избранных товаров</li>';
+        } else {
+            favorites.forEach(product => {
+                const li = document.createElement('li');
+                li.textContent = product;
+                favoritesList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

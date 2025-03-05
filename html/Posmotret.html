@@ -38,10 +38,27 @@
 
   <!-- основное содержимое страницы -->
 <main>
-  <!-- <div>
-    <img src="https://ukit.com/ru/help/_bl/0/41899733.png" 
-    class ="v_razrabotke" alt="page is under construction">
-  </div> -->
+  <h1>Избранное</h1>
+  <ul id="favoritesList"></ul>
+  <h2><a href="../index.html">Вернутья на главную</a></h2>
+  
+  <!-- <button>Delite</button> -->
+
+  <script>
+      // Получаем избранные товары из localStorage и отображаем их
+      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      const favoritesList = document.getElementById('favoritesList');
+      if (favorites.length === 0) {
+          favoritesList.innerHTML = '<li>Нет избранных фильмов</li>';
+      } else {
+          favorites.forEach(product => {
+              const li = document.createElement('li');
+              li.textContent = product;
+             
+              favoritesList.appendChild(li);
+          });
+      }
+  </script>
     
 </main>
     

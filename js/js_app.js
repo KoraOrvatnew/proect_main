@@ -50,8 +50,9 @@ function showMovies(data) {
           <div class="movie_cover--darkened"></div>
         </div>
         <div class="movie_info">
-          <div>
-            <button class="btnwatchLater">Хочу посмотреть</button>
+                 <div>
+           <button onclick="addToFavorites('${movie.name}')">Добавить в избранное </button>
+        
           </div>
           <div class="movie_title">Название: ${movie.name}</div>
           <div class="movie_category">Жанр: ${movie.genre}</div>
@@ -75,6 +76,8 @@ function showMovies(data) {
       `;
     moviesEl.appendChild(movieEl);
   });
+   
+// console.log(data) 
 
   // Настройка обработчиков событий для модального окна
   const modal = document.querySelector('#modal');
@@ -94,11 +97,7 @@ function showMovies(data) {
                 Описание: ${movieData.description}
                
         `;
- 
-
-
-
-modal.querySelector('.modal-content .poster').src=movieData.img;
+ modal.querySelector('.modal-content .poster').src=movieData.img;
 
       // Показываем модальное окно
       modal.style.display = 'block';
@@ -115,3 +114,32 @@ modal.querySelector('.modal-content .poster').src=movieData.img;
     }
   });
 }
+
+
+ // Функция для добавления фильма в избранное
+function addToFavorites(index) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    
+    if (!favorites.includes(index)) {
+        favorites.push(index);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        alert(`${index} - фильм добавлен в избранное!`);
+        
+    } else {
+        alert(`${index} - фильм уже добавлен!`);
+    }
+}
+ // Получаем избранные фильмы из localStorage и отображаем их
+ const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+ const favoritesList = document.getElementById('favoritesList');
+
+ if (favorites.length === 0) {
+     favoritesList.innerHTML = '<li>Нет избранных фильмов</li>';
+ } else {
+     favorites.forEach(index => {
+         const li = document.createElement('li');
+         li.textContent = index;
+         favoritesList.appendChild(li);
+     });
+ }
+
