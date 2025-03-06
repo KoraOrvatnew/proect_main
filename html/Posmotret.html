@@ -48,6 +48,7 @@
       // Получаем избранные товары из localStorage и отображаем их
       const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
       const favoritesList = document.getElementById('favoritesList');
+      const deleteContainerBtn = document.getElementById('delete-container')
       if (favorites.length === 0) {
           favoritesList.innerHTML = '<li>Нет избранных фильмов</li>';
       } else {

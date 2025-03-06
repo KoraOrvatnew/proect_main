@@ -34,3 +34,51 @@
   color: black;
   text-decoration: none;
 } 
+.openModal { /*кнопка "Подробнее"*/
+  background-color: #faaf01; 
+  border: #888;
+  border: 10px;
+  color: rgb(5, 5, 5);
+  padding: 3px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:20px;
+  
+}
+.openModal:hover {
+  background-color: #f8c706;
+}
+.Favorit { /*кнопка "В избранное"*/
+  background-color: #068306; 
+  border: #888;
+  border: 10px;
+  color: white;
+  padding: 3px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:20px;
+  
+}
+.Favorit:hover {
+  background-color: #2fcc03;
+}
+.BtnDel {
+  background-color: #fa0804; /*кнопка "Удалить из избранного"*/  
+  border: #888;
+  border: 10px;
+  color: white;
+  padding: 3px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:20px;  
+  
+}
+.BtnDel:hover {
+  background-color: #e65555;
+}

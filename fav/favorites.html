@@ -6,14 +6,16 @@
     <title>Избранное</title>
 </head>
 <body>
-    <h1>Избранное</h1>
+    <h1>Хочу посмотреть</h1>
     <ul id="favoritesList"></ul>
-    <h2><a href="index.html">Вернуться к товарам</a></h2>
+    <h2><a href="../index.html">Вернуться на главную</a></h2>
+    <button id="delFilm">Delite</button>
 
     <script>
         // Получаем избранные фильмы из localStorage и отображаем их
         const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         const favoritesList = document.getElementById('favoritesList');
+                
 
         if (favorites.length === 0) {
             favoritesList.innerHTML = '<li>Нет избранных товаров</li>';
