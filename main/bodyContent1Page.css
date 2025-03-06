@@ -6,6 +6,7 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
 }
 .movie {
     width: 240px;
@@ -97,3 +98,4 @@ border: 1px solid red;
     .movie_year{
         color: white;
     }
+    

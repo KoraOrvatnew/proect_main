@@ -1,4 +1,5 @@
- .modal {
+/*модальное окно*/
+  .modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -19,6 +20,7 @@
   max-width: 600px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
 }
 
 .close {
@@ -34,6 +36,7 @@
   color: black;
   text-decoration: none;
 } 
+
 .openModal { /*кнопка "Подробнее"*/
   background-color: #faaf01; 
   border: #888;
@@ -55,7 +58,7 @@
   border: #888;
   border: 10px;
   color: white;
-  padding: 3px 20px;
+  padding: 0 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -71,7 +74,7 @@
   border: #888;
   border: 10px;
   color: white;
-  padding: 3px 20px;
+  padding: 0 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -81,4 +84,10 @@
 }
 .BtnDel:hover {
   background-color: #e65555;
+}
+
+/**/
+.spisok {
+margin: 50px;
+
 }

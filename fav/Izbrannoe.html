@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+    <link rel="stylesheet" href="../css/headerBodyFooterBtn.css">
+    <link rel="stylesheet" href="../main/modal.css">
+   
+    
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"/>
+    <title>Izbrannoe</title>
+  </head>
+  <body>
+    <header class="header_container">
+      <div class="header_content">
+        <a href="#" class="header_logo">MediaServer</a>
+        <button class="header_BtnMainPage">
+          <a href="../index.html">Вернуться на главную</a>
+        </button>
+        <button class="header_BtnMainPage">
+          <a href="#">Избранное</a>
+       </button>
+        <button class="header_BtnMainPage">
+          <a href="../adminka/admin.html">Вход для модератора</a>
+        </button>
+        <form>
+            <input type="text" class="header_search" placeholder="Поиск">
+        </form>
+         
+      </div> 
+      
+</header>
+
+  <!-- основное содержимое страницы -->
+<main>
+  <div class="container">
+    <div class="movie">
+    
+  <h1 class="spisok"><u>Избранное</u></h1>
+ 
+  <div></div>
+  <div id="favoritesList"></div>
+  <div></div>
+  <button class="header_BtnMainPage"><a href="../index.html">Вернуться на главную</a></button>
+  
+  <!-- <button>Delete</button> -->
+
+  <!-- <script>
+    // Функция для удаления фильма из избранного
+      function removeFromFavorites(movieName) {
+          let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+          if (favorites.includes(movieName)) {
+              favorites = favorites.filter(favorite => favorite !== movieName);
+              localStorage.setItem('favorites', JSON.stringify(favorites));
+              alert(`${movieName} - фильм удален из избранного!`);
+              // Обновление списка избранных фильмов после удаления
+              displayFavorites();
+          } else {
+              alert(`${movieName} - фильм не найден в избранном!`);
+          }
+          displayFavorites();
+      }
+      function displayFavorites(){ -->
+      <!-- // Получаем избранные товары из localStorage и отображаем их
+      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      const favoritesList = document.getElementById('favoritesList');
+      const deleteContainerBtn = document.getElementById('delete-container')
+      if (favorites.length === 0) {
+          favoritesList.innerHTML = '<li>Нет избранных фильмов</li>';
+      } else {
+        favoritesList.innerHTML = "";
+           favorites.forEach(product => {
+              const li = document.createElement('li');
+               li.innerHTML = product + ' <button class="BtnDel" onclick="removeFromFavorites(\'' + product.toString() + '\')">Удалить</button>';
+             
+              favoritesList.appendChild(li);
+           });
+      }
+    }
+    displayFavorites();
+      
+  </script>  -->
+</div>
+</div>
+</main>
+    
+
+
+
+<footer class="footer_content">
+  <p>Контактная информация: <a href="mailto:admin@mediaserver.by" target="_blank">admin@mediaserver.by</a></p>
+  <p>Владелец &copy; 2025</p>
+</footer>
+<!-- 
+    <script src="../main/search.js"></script> -->
+    <script src="./script.js"></script>
+    <!-- <script src="../main/js_app.js"></script> -->
+
+  </body>
+
+</html>
